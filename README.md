@@ -2,7 +2,9 @@
 
 ## Project analysis:
 
+
 > 1. User profile
+
 
 - Andrés, 20 years old - Computer Engineering student
 
@@ -12,7 +14,9 @@
 
 - Unfortunately, as a student with limited professional experience, Andrés needs to highlight his academic achievements and technical abilities. Therefore, he also needs to present his profile professionally so recruiters can quickly identify his strengths. For this reason, the CV website provides a structured overview of Andrés's profile, combining a clear and attractive visual design with organized sections. Overall, this website will be very useful for him to communicate his academic results and achievements, show his technical knowledge and first work experiences, and make his profile accessible to recruiters.
 
+
 > 2. Information architecture
+
 
 - First of all, as the assignment instructions said, the website is designed as a single-page static CV.
 
@@ -28,7 +32,9 @@
 
 - Overall, I feel that the section headings, the combination of different font sizes and typography styles, and the distribution of the website will help visitors understand the information and read the page clearly. I hope that the spacing, alignment, and layout I have used will help keep the CV organized and neat.
 
+
 > 3. Visual design
+
 
 - I tried to create a visual design that evokes a professional, clear, and modern CV suitable for the current technology sector. I used a minimal colour palette in order to maintain consistency and help distinguish the different sections clearly.
 
@@ -42,7 +48,9 @@
 
 - From my point of view, I believe that, in general, the design creates a professional impression, is clear and attractive to read, keeps the information consistent and well distributed, and provides quick and easy access to relevant elements.
 
+
 > 4. Link to the Figma project
+
 
 - https://www.figma.com/design/fyyaxQoujHAbyQsZNohZNV/CV_MIIU?node-id=32-862&t=AkmwmS6gN43UUB0B-1
 
