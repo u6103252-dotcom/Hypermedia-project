@@ -315,6 +315,10 @@ body { /* Page styles */
 }
 
 @media (max-width: 768px) { /* Stack the main columns on small screens */
+    .top-header,
+    .identity-bar {
+        flex-wrap: wrap;
+    }
     .content-grid {
         grid-template-columns: 1fr;
     }
