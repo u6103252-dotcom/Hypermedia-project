@@ -314,7 +314,7 @@ body { /* Page styles */
     margin-right: 4px;
 }
 
-@media (max-width: 768px) { /* Stack the main columns on small screens */
+@media (max-width: 768px) { /* Stack the main columns, header and identity section on small screens and smartphones */
     .top-header,
     .identity-bar {
         flex-wrap: wrap;
