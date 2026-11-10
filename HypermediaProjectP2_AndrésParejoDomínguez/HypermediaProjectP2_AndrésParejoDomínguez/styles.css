@@ -1,0 +1,264 @@
+:root { /* CSS variables for colors and fonts */
+    --background: #f7f8f5;
+    --text: #26352b;
+    --white: #ffffff;
+    --green: #55ad62;
+    --light-green: #e6f1e3;
+    --hover-green: #edf5e9;
+    --dark-green: #347743;
+    --border: #d3dfd0;
+    --button-text: #405242;
+    --font: "Times New Roman", Times, serif;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+button { /* To use the same font as the rest of the page for all buttons */
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled { opacity: 0.4; }
+
+.website, .screen { /* Center main content and limit its width */
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.website {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.hidden { display: none; }
+
+.menu-screen { padding: 35px 0; }
+.menu-screen h1 { font-size: 48px; } /* Main title and section headings */
+.menu-screen h2 { font-size: 22px; }
+
+.instructions { /* Instructions container */
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
+    padding: 15px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+.instructions ol {
+    padding-left: 25px;
+    margin: 0;
+}
+
+.instructions li {
+    padding-left: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.instructions li::marker { /* To highlight the numbers of the instructions */
+    color: var(--dark-green);
+    font-weight: bold;
+}
+
+.instructions li:last-child { margin-bottom: 0; }
+
+.level-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.level-option:nth-child(4) { grid-column: 2 / span 2; } /* To put the 4th and 5th levels in the center of the 2nd row */
+.level-option:nth-child(5) { grid-column: 4 / span 2; }
+
+.level-option { /* Appearance & layout of each level card */
+    display: flex;
+    grid-column: span 2;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.level-option:hover, .outline-button:hover {
+    background: var(--light-green);
+    border-color: #8eb78a;
+}
+
+.level-preview {
+    position: relative;
+    width: 100%;
+    max-width: 190px;
+    height: 190px;
+    background: #e8eee5;
+    border: 3px solid var(--border);
+}
+
+.small-car { /* To put the small cars inside the level previews */
+    position: absolute;
+    background: #83b8d4;
+}
+
+.main-small-car, .car.main-car { background: var(--green); }
+
+.color-blue { background: #83b8d4; }
+.color-yellow { background: #e8c76c; }
+.color-purple { background: #b4a1d2; }
+.color-teal { background: #78c4b0;}
+.color-orange { background: #e7a16c; }
+.color-pink { background: #d99fb0; }
+
+.level-info {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.game-screen { padding: 25px 0; }
+
+.game-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.game-top h1 { font-size: 27px; }
+
+.outline-button, .move-counter { /* Same appearance to the back button and move counter */
+    padding: 9px 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--button-text);
+    font-size: 14px;
+}
+
+.outline-button {
+    justify-self: end;
+    margin-right: 15px;
+}
+
+.move-counter { /* Style & position of the move counter */
+    width: fit-content;
+    justify-self: start;
+    margin-left: 15px;
+    background: var(--light-green);
+    color: var(--dark-green);
+    font-weight: bold;
+}
+
+#move-counter { font-size: 17px; }
+
+.board {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding: 13px;
+    border: 5px solid #aebdac;
+    background: #dce5d9;
+}
+
+.game-board { /* To create the 6x6 grid */
+    position: relative;
+    display: grid;
+    grid-template: repeat(6, 60px) / repeat(6, 60px);
+    gap: 4px;
+}
+
+.board-cell { background: #f5f7f2; }
+
+.exit-opening { /* Open the exit on the right side of the board */
+    position: absolute;
+    right: -7px;
+    width: 8px;
+    height: 24px;
+    background: var(--background);
+}
+
+.car { /* Cars positioned dynamically by Js */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 2px solid var(--white);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.car.selected {
+    outline: 3px solid #294f32;
+    z-index: 4;
+}
+
+.game-controls { margin: 20px auto; }
+
+.main-buttons, .arrow-controls, .victory-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main-buttons button, .arrow-controls button, .victory-buttons button { /* To align the groups of buttons horizontally */
+    padding: 10px 17px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--button-text);
+    font-size: 14px;
+}
+
+.main-buttons button:hover, .arrow-controls button:hover, .victory-buttons button:hover {
+    background: var(--hover-green);
+}
+
+#selection-hint {
+    display: inline-block;
+    margin: 17px 0 10px;
+    padding: 9px 16px;
+    background: var(--light-green);
+    color: var(--dark-green);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.arrow-controls button { /* Movement arrow buttons */
+    min-width: 62px;
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    top: 7px;
+}
+
+.drag-label {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 5px 14px;
+    background: #b6b6b6;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.victory-screen h1 { font-size: 38px; }
+.victory-screen p { color: #657465; }
+
+@media (max-width: 600px) { /* To make the website more responsive on smaller screens */
+    .website, .screen {
+        width: 95%;
+    }
+}

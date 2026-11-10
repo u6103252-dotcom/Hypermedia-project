@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andrés Parejo Domínguez">
+    <meta name="description" content="A website of the Rush Hour puzzle game with five difficulty levels">
+    <title>Rush Hour</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="website"> <!-- Main container with all the game screens -->
+        <section id="menu-screen" class="screen menu-screen"> <!-- Main menu with game title instructions and levels -->
+            <h1>RUSH HOUR</h1>
+            <h2 class="instructions-title">Instructions:</h2>
+            <div class="instructions">
+                <ol>
+                    <li>You can move each car only in its direction</li>
+                    <li>Any car cannot leave the limits of the board</li>
+                    <li>Try to clear the way for your car to escape</li>
+                </ol>
+            </div>
+            <h2>Select level:</h2>
+            <div id="level-list" class="level-list"></div>
+        </section>
+
+        <section id="game-screen" class="screen game-screen hidden">
+        <!-- Game screen. It contains the board, game info, controls... (hidden class to keep screen invisible until a level selected -->
+            <div class="game-top">
+                <button id="back-button" class="outline-button" type="button">← Back to menu</button>
+                <h1 id="game-title">Find the exit</h1>
+                <p class="move-counter">Moves: <span id="move-counter"></span></p>
+            </div>
+
+            <div class="board"> <!-- Construction of the board (6x6 game grid where Js places cars) and exit -->
+                <div id="game-board" class="game-board"></div>
+                <div class="exit-opening"></div>
+            </div>
+
+            <div class="game-controls">
+                
+                <div class="main-buttons"> <!-- Buttons to reset the level or undo the previous move -->
+                    <button id="reset-button" type="button">Restart</button>
+                    <button id="undo-button" type="button" disabled>Undo</button>
+                </div>
+                <p id="selection-hint">Select a car</p>
+
+                <div class="arrow-controls"> <!-- Arrow buttons to allow the car to move in either direction and drag label to indicate they can be moved directly -->
+                    <button id="move-negative" class="arrow-button">←</button>
+                    <span class="drag-label">Drag</span>
+                    <button id="move-positive" class="arrow-button">→</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="victory-screen" class="screen victory-screen hidden">
+            <h1>You escaped!</h1>
+            <p id="victory-message"></p> <!-- Message construction in Js -->
+
+            <div class="victory-buttons"> <!-- Options available after completing a level -->
+                <button id="next-level-button" type="button">Next level</button>
+                <button id="play-again-button" type="button">Play again</button>
+                <button id="victory-menu-button" type="button">Back to menu</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
